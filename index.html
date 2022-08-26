@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JS buổi 2-3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <section class="py-5 header">
+        <div class="container py-4">
+            <header class="text-center mb-5 pb-5 text-white">
+                <h1 class="display-4">BC35E - Bài Tập JS Buổi 2-3 - Lê Trọng Văn</h1>
+            </header>
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Tabs nav -->
+                    <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <a class="nav-link mb-3 p-3 shadow active" id="v-pills-bai1-tab" data-toggle="pill"
+                            href="#v-pills-bai1" role="tab" aria-controls="v-pills-bai1" aria-selected="true">
+                            <i class="fa fa-user-circle-o mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase">BÀI TẬP JS 1</span></a>
+
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-bai2-tab" data-toggle="pill"
+                            href="#v-pills-bai2" role="tab" aria-controls="v-pills-bai2" aria-selected="false">
+                            <i class="fa fa-calendar-minus-o mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase">BÀI TẬP JS 2</span></a>
+
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-bai3-tab" data-toggle="pill"
+                            href="#v-pills-bai3" role="tab" aria-controls="v-pills-bai3" aria-selected="false">
+                            <i class="fa fa-star mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase">BÀI TẬP JS 3</span></a>
+
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-bai4-tab" data-toggle="pill"
+                            href="#v-pills-bai4" role="tab" aria-controls="v-pills-bai4" aria-selected="false">
+                            <i class="fa fa-check mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase">BÀI TẬP JS 4</span></a>
+
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-bai5-tab" data-toggle="pill"
+                            href="#v-pills-bai5" role="tab" aria-controls="v-pills-bai5" aria-selected="false">
+                            <i class="fa fa-calculator mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase">BÀI TẬP JS 5</span></a>
+                    </div>
+                </div>
+
+
+                <div class="col-md-9">
+                    <!-- Tabs content -->
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-bai1"
+                            role="tabpanel" aria-labelledby="v-pills-bai1-tab">
+                            <h4 class="font-italic mb-4">💰 Tính tiền lương nhân viên</h4>
+                            <div class="form-group col-12 col-lg-4">
+                                <div class="form-group">
+                                    <label>Số ngày công</label>
+                                    <input type="text" id="soNgay" class="form-control" placeholder="số ngày">
+                                </div>
+                                <button id="btnTinhLuong" class="btn btn-success nutbam">Tính lương</button>
+                            </div>
+                            <div id="showInfoLuong"></div>
+                        </div>
+
+                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-bai2" role="tabpanel"
+                            aria-labelledby="v-pills-bai2-tab">
+                            <h4 class="font-italic mb-4">📚 Tính giá trị trung bình 5 số</h4>
+                            <div class="form-group row gy-3 align-items-center px-2">
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="number" id="giaTri1" class="form-control" placeholder="Nhập số thứ 1">
+                                </div>
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="number" id="giaTri2" class="form-control" placeholder="Nhập số thứ 2">
+                                </div>
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="number" id="giaTri3" class="form-control" placeholder="Nhập số thứ 3">
+                                </div>
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="number" id="giaTri4" class="form-control" placeholder="Nhập số thứ 4">
+                                </div>
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="number" id="giaTri5" class="form-control" placeholder="Nhập số thứ 5">
+                                </div>
+
+                            </div>
+                            <button id="btnTinhTB" class="btn btn-success nutbam">Tính trung bình</button>
+                            <div id="showGiaTriTB"></div>
+                        </div>
+
+                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-bai3" role="tabpanel"
+                            aria-labelledby="v-pills-bai3-tab">
+                            <h4 class="font-italic mb-4">💱 Quy đổi tiền</h4>
+                            <div class="form-group">
+                                <label>Số USD</label>
+                                <input type="text" id="soUSD" class="form-control col-12 col-lg-4" placeholder="">
+                            </div>
+                            <button id="btnDoiTien" class="btn btn-success nutbam"> Đổi tiền</button>
+                            <div id="showSoTien"></div>
+                        </div>
+
+                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-bai4" role="tabpanel"
+                            aria-labelledby="v-pills-bai4-tab">
+                            <h4 class="font-italic mb-4">📏 Tính diện tích, chu vi hình chữ nhật</h4>
+                            <div class="form-group row gy-3 align-items-center px-2">
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="text" id="chieuDai" class="form-control" placeholder="Nhập chiều dài">
+                                </div>
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="text" id="chieuRong" class="form-control"
+                                        placeholder="Nhập chiều rộng">
+                                </div>
+                            </div>
+                            <button id="btnTinhHH" class="btn btn-success nutbam"> Tính</button>
+                            <div id="showCVDT"></div>
+                        </div>
+
+                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-bai5" role="tabpanel"
+                            aria-labelledby="v-pills-bai5-tab">
+                            <h4 class="font-italic mb-4">🧮 Tính tổng 2 ký số</h4>
+                            <div class="form-group">
+                                <label>Nhập số có 2 chữ số</label>
+                                <input type="text" id="kySo" class="form-control col-12 col-lg-4" placeholder="">
+                            </div>
+                            <button id="btnTinhKySo" class="btn btn-success nutbam">Tính tổng</button>
+                            <div id="showKySo"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section>
+        <p><b>BC35E_JSBuoi1_Le Trong Van</b></p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            Bài 1: Tính tiền lương nhân viên
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label>Số ngày công</label>
+                                    <input type="text" id="soNgay" class="form-control" placeholder="số ngày">
+                                </div>
+                            </div>
+                            <button id="btnTinhLuong" class="btn btn-success nutbam">Tính lương</button>
+                        </div>
+                        <div id="showInfoLuong" class="card-footer text-muted">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Bài 2: Tính Giá Trị Trung Bình
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="">Giá trị 1</label>
+                                <input type="number" id="giaTri1" class="form-control" placeholder="">
+                                <label for="">Giá trị 2</label>
+                                <input type="number" id="giaTri2" class="form-control" placeholder="">
+                                <label for="">Giá trị 3</label>
+                                <input type="number" id="giaTri3" class="form-control" placeholder="">
+                                <label for="">Giá trị 4</label>
+                                <input type="number" id="giaTri4" class="form-control" placeholder="">
+                                <label for="">Giá trị 5</label>
+                                <input type="number" id="giaTri5" class="form-control" placeholder="">
+                            </div>
+                            <button id="btnTinhTB" class="btn btn-success nutbam">Tính giá trị TB</button>
+                        </div>
+                    </div>
+                    <div id="showGiaTriTB" class="card-footer text-muted"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Bài 3: Quy đổi tiền
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Số USD</label>
+                                <input type="text" id="soUSD" class="form-control" placeholder="">
+                            </div>
+                            <button id="btnDoiTien" class="btn btn-success nutbam"> Đổi tiền</button>
+                        </div>
+                        <div id="showSoTien" class="card-footer text-muted">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Bài 4: Tính chu vi, diện tích hình chữ nhật
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Chiều dài</label>
+                                <input type="text" id="chieuDai" class="form-control" placeholder="">
+                                <label>Chiều rộng</label>
+                                <input type="text" id="chieuRong" class="form-control" placeholder="">
+                            </div>
+                            <button id="btnTinhHH" class="btn btn-success nutbam"> Tính</button>
+                        </div>
+                        <div id="showCVDT" class="card-footer text-muted">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Bài 5: Tính tổng 2 ký số
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Nhập số 2 chữ số</label>
+                                <input type="text" id="kySo" class="form-control" placeholder="">
+                            </div>
+                            <button id="btnTinhKySo" class="btn btn-success nutbam">Tính tổng</button>
+                        </div>
+                        <div id="showKySo" class="card-footer text-muted">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            Tính tiền từ thiện
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label>Tên Phim</label>
+                                    <input type="text" id="tenPhim" class="form-control" placeholder="">
+                                    <label>Giá vé NL</label>
+                                    <input type="text" id="giaVeNL" class="form-control" placeholder="">
+                                    <label>Số lượng vé NL</label>
+                                    <input type="text" id="soVeNL" class="form-control" placeholder="">
+                                    <label>Giá vé TE</label>
+                                    <input type="text" id="giaVeTE" class="form-control" placeholder="">
+                                    <label>Số lượng vé TE</label>
+                                    <input type="text" id="soVeTE" class="form-control" placeholder="">
+                                    <label>Tỉ lệ từ thiện</label>
+                                    <select class="form-control" id="selectTT">
+                                        <option value="15">15%</option>
+                                        <option value="20">20%</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="btnTinhTienTT" class="btn btn-success nutbam">Tính Tiền Từ Thiện</button>
+                        </div>
+                    </div>
+                    <div id="showInfoTien" class="card-footer text-muted">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button id="btnTaoNoiDung" class="btn btn-danger">Tạo nội dung</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>ten SP</th>
+                    <th>gia</th>
+                    <th>mo ta</th>
+                </tr>
+            </thead>
+            <tbody id="myTbody"></tbody>
+        </table>
+        <br>
+        <br>
+    </section> -->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="./bai1.js"></script>
+    <script src="./bai2.js"></script>
+    <script src="./bai3.js"></script>
+    <script src="./bai4.js"></script>
+    <script src="./bai5.js"></script>
+
+</body>
+
+</html>
